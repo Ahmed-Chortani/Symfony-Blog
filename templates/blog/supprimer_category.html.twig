@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!{% endblock %}
+
+{% block body %}
+    {%if app.user%}
+    <div class="container">
+    {%for category in categories%}
+    <article>
+        <h2>{{category.title}}</h2>
+        {{category.description}}
+            <a href="{{path('supprimer_category', {'id':category.id})}}" class="btn btn-primary">Supprimer</a>
+        </div>
+    </article>
+    {%endfor%}
+    </div>
+    {%endif%}
+{% endblock %}

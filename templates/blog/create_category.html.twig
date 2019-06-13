@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% form_theme formCategory 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    <h1>Creation d'un Category !</h1>
+   
+   
+
+    {# {{form(formArticle)}} #}
+
+    {# {{form_error(formArticle.title)}} #}
+    {{form_start(formCategory)}}
+        {{form_row(formCategory.title, {'attr' :{'placeholder':"Titre du Category"}} ) }}
+        {{form_row(formCategory.description, {'attr' : {'placeholder':"Description du Category"}} )}}
+        <button type="submit" class="btn btn-primary">Ajouter la Category</button>
+    {{form_end(formCategory)}}
+    
+     {# {{form_start(formArticle)}}
+        {{form_widget(formArticle)}}
+        <button type="submit" class="btn btn-success">Ajouter l'article</button>
+     {{form_end(formArticle)}} #}
+
+    
+{% endblock %}
